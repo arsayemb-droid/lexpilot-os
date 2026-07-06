@@ -1,12 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { getRecentNotes } from "@/lib/api/dashboard";
 
-const notes = [
-  "Law of Contract",
-  "Law of Torts",
-  "Constitutional Law",
-];
+export default async function RecentNotes() {
+  const notes = await getRecentNotes();
 
-export default function RecentNotes() {
   return (
     <Card className="border-zinc-800 bg-zinc-900 text-white">
       <CardContent className="p-6">
@@ -17,10 +14,10 @@ export default function RecentNotes() {
         <ul className="mt-5 space-y-3">
           {notes.map((note) => (
             <li
-              key={note}
-              className="rounded-lg border border-zinc-800 p-3 hover:bg-zinc-800 transition"
+              key={note.title}
+              className="rounded-lg border border-zinc-800 p-3 transition hover:bg-zinc-800"
             >
-              {note}
+              {note.title}
             </li>
           ))}
         </ul>

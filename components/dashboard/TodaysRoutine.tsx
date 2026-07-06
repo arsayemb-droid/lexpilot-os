@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { getTodaysRoutine } from "@/lib/api/dashboard";
 
-export default function TodaysRoutine() {
+export default async function TodaysRoutine() {
+  const routine = await getTodaysRoutine();
+
   return (
     <Card className="border-zinc-800 bg-zinc-900 text-white">
       <CardContent className="p-6">
@@ -9,9 +12,11 @@ export default function TodaysRoutine() {
         </h2>
 
         <ul className="mt-4 space-y-2 text-zinc-400">
-          <li>📖 Read Contract Law</li>
-          <li>📝 Revise Jurisprudence</li>
-          <li>🤖 Practice AI Assistant</li>
+          {routine.map((task) => (
+            <li key={task.title}>
+              📖 {task.title}
+            </li>
+          ))}
         </ul>
       </CardContent>
     </Card>

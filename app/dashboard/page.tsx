@@ -94,7 +94,7 @@ export default function DashboardPage() {
 
 import Container from "@/components/common/Container";
 import Hero from "@/components/dashboard/Hero";
-import DashboardCard from "@/components/dashboard/DashboardCard";
+import StatsGrid from "@/components/dashboard/StatsGrid";
 import QuickActions from "@/components/dashboard/QuickActions";
 import AISummary from "@/components/dashboard/AISummary";
 import RecentNotes from "@/components/dashboard/RecentNotes";
@@ -106,12 +106,7 @@ export default function DashboardPage() {
     <Container>
       <Hero />
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <DashboardCard title="Notes" value="24" />
-        <DashboardCard title="AI Chats" value="18" />
-        <DashboardCard title="Routine" value="7" />
-        <DashboardCard title="Progress" value="82%" />
-      </div>
+      <StatsGrid />
 
       <QuickActions />
 

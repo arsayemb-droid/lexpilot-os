@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import ThemeProvider from "./ThemeProvider";
 
 type ProvidersProps = {
   children: ReactNode;
@@ -9,5 +10,9 @@ type ProvidersProps = {
 export default function Providers({
   children,
 }: ProvidersProps) {
-  return <>{children}</>;
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  );
 }

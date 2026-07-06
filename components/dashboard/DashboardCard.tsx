@@ -1,33 +1,23 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 type DashboardCardProps = {
   title: string;
-  description?: string;
-  children: React.ReactNode;
+  value: string;
 };
 
 export default function DashboardCard({
   title,
-  description,
-  children,
+  value,
 }: DashboardCardProps) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
+    <Card className="border-zinc-800 bg-zinc-900 text-white">
+      <CardContent className="p-6">
+        <p className="text-sm text-zinc-400">{title}</p>
 
-        {description && (
-          <CardDescription>{description}</CardDescription>
-        )}
-      </CardHeader>
-
-      <CardContent>{children}</CardContent>
+        <h2 className="mt-3 text-3xl font-bold">
+          {value}
+        </h2>
+      </CardContent>
     </Card>
   );
 }

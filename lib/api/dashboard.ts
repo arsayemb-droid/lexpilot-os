@@ -1,7 +1,7 @@
 import { dashboardStats } from "@/data/dashboard";
 import {
   dashboardStats,
-    recentNotes,
+  recentNotes,
   todaysRoutine,
 } from "@/data/dashboard";
 

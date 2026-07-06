@@ -1,8 +1,7 @@
+import { env } from "@/lib/env";
+
 export const appConfig = {
-  appName: "LexPilot AI",
-  aiName: "LexAI",
-
-  description: "AI Powered Law Student Operating System",
-
-  version: "0.1.0",
+  appName: env.appName,
+  description: "AI Powered Law Student OS",
+  version: env.version,
 };
